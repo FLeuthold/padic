@@ -5,14 +5,6 @@ param(
     [int64]$NumDigits = 20
 )
 
-if ($Denominator % $Base -eq 0) {
-    Write-Error "The base (p=$Base) divides the denominator ($Denominator)."
-    Write-Error "This fraction does not have a p-adic integer representation."
-    Write-Error "Its p-adic representation would have negative powers of $Base (a 'decimal point')."
-    return
-}
-
-
 for ($i = 0; $i -lt $NumDigits; $i++) {
     
     $found_d = -1
